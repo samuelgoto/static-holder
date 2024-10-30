@@ -118,6 +118,7 @@ app.get("/", async (req, res) => {
     <br><br>
 
     <button onclick="IdentityProvider.register(window.location.origin + '/fedcm.json')">Register</button>
+    <button onclick="IdentityProvider.unregister(window.location.origin + '/fedcm.json')">Unregister</button>
 
   `);
 });
