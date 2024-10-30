@@ -76,15 +76,36 @@ app.use("/client_metadata", (req, res) => {
 
 const tokens = {};
 
+app.get("/present", (req, res) => {
+  //console.log(req.query);
+
+  const token = JSON.stringify({name: "Sam", id: "23134"});
+
+  res.send(`
+     <br> <img width="60px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/California_Department_of_Motor_Vehicles_logo.svg/1200px-California_Department_of_Motor_Vehicles_logo.svg.png">
+
+     <br><br>Are you sure you want to share your information with ${req.query.client_id}?
+
+     <br><br>
+     <br> Name: Sam Goto
+     <br> Number: CA DMV #23134
+
+     <br><br>
+
+     <button onclick="IdentityProvider.resolve('${encodeURIComponent(token)}')">Yes</button>
+  `);
+});
+
 app.post("/id_assertion_endpoint", (req, res) => {
   res.type("json");
   res.set("Access-Control-Allow-Origin", req.headers.origin);
   res.set("Access-Control-Allow-Credentials", "true");
-  
+  //console.log(req);
   res.json({
-    token: JSON.stringify({
-      hello: "world",
-    }),
+    //token: JSON.stringify({
+    //  hello: "world",
+    //}),
+    continue_on: "/present?client_id=" + req.body.client_id,
   });
 });
 
@@ -94,10 +115,9 @@ app.get("/", async (req, res) => {
   res.send(`
     This is the absolutely simplest FedCM Holder.
 
-
     <br><br>
 
-    <button onclick="IdentityProvider.register('http://wallet.sgo.to/fedcm.json')">Register</button>
+    <button onclick="IdentityProvider.register(window.location.origin + '/fedcm.json')">Register</button>
 
   `);
 });
