@@ -32,10 +32,13 @@ app.use("/fedcm.json", async function (req, res, next) {
 	     background_color: "#1a73e8",
 	     color: "#fff",
 	     icons: [{
-        url: "https://accounts.google.com/gsi-static/google-logo.png",
+        // url: "https://accounts.google.com/gsi-static/google-logo.png",
+        url: "https://img.freepik.com/premium-vector/google-wallet-logo_689336-957.jpg",
         size: 32
       }, {
-        url: "https://accounts.google.com/gsi-static/google-logo_40.png",
+        //url: "https://accounts.google.com/gsi-static/google-logo_40.png",
+        url: "https://img.freepik.com/premium-vector/google-wallet-logo_689336-957.jpg",
+        //url: "https://static.wikia.nocookie.net/logopedia/images/8/83/Google_Wallet_%282022%29_icon.svg/revision/latest/scale-to-width-down/250?cb=20220803140845",
         size: 40
       }]
     },
@@ -52,10 +55,12 @@ app.use("/accounts", (req, res) => {
     accounts: [{
       id: "1234",
       account_id: "1234",
-      email: "user@email.com",
-      name: "John Doe",
-      given_name: "John",
-      picture: "https://pbs.twimg.com/profile_images/920758039325564928/vp0Px4kC_400x400.jpg",
+      email: "CA DMV #23134",
+      name: "Sam Goto",
+      given_name: "Sam",
+      picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/California_Department_of_Motor_Vehicles_logo.svg/1200px-California_Department_of_Motor_Vehicles_logo.svg.png",
+      // picture: "https://pbs.twimg.com/profile_images/920758039325564928/vp0Px4kC_400x400.jpg",
+      approved_clients: [],
     },],
   });
 });
