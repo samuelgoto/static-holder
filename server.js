@@ -27,11 +27,11 @@ app.use("/fedcm.json", async function (req, res, next) {
     revocation_endpoint: "/revoke_endpoint.json",
     metrics_endpoint: "/metrics_endpoint.json",
     login_url: "/",
-    // types: ["indieauth"],
+    types: ["holder"],
     branding: {
-	     background_color: "#1a73e8",
-	     color: "#fff",
-	     icons: [{
+	background_color: "#1a73e8",
+	color: "#fff",
+	icons: [{
         // url: "https://accounts.google.com/gsi-static/google-logo.png",
         url: "https://img.freepik.com/premium-vector/google-wallet-logo_689336-957.jpg",
         size: 32
