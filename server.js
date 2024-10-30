@@ -93,6 +93,12 @@ app.use(express.static("public"));
 app.get("/", async (req, res) => {
   res.send(`
     This is the absolutely simplest FedCM Holder.
+
+
+    <br><br>
+
+    <button onclick="IdentityProvider.register('http://wallet.sgo.to/fedcm.json')">Register</button>
+
   `);
 });
 
